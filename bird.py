@@ -1,5 +1,6 @@
 from pico2d import *
 import game_framework
+import random
 
 sprites = (
     (0, 92), (50, 92), (100, 92), (150, 92), (200, 92),
@@ -25,12 +26,13 @@ FRAMES_PER_ACTION = 14
 class Bird:
     image = None
 
-    def __init__(self, x = 400, y = 400):
+    def __init__(self):
         if Bird.image == None:
             Bird.image = load_image('bird_animation.png')
-        self.x, self.y = x, y
+        self.x = random.randint(100, 1500)
+        self.y = random.randint(350, 500)
         self.face_dir = 1
-        self.frame = 0
+        self.frame = random.randint(0, 14)
 
     def draw(self):
         frame_x, frame_y = sprites[int(self.frame)]
