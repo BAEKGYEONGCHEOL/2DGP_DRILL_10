@@ -2,12 +2,14 @@ from pico2d import *
 
 from boy import Boy
 from grass import Grass
+from bird import Bird
 import game_world
 
 import game_framework
 
 
 boy = None
+bird = None
 
 def handle_events():
     global running
@@ -23,6 +25,7 @@ def handle_events():
 
 def init():
     global boy
+    global bird
     global running
 
     running = True
@@ -31,6 +34,10 @@ def init():
 
     boy = Boy()
     game_world.add_object(boy, 1)
+
+    bird = Bird(400, 400)
+    game_world.add_object(bird, 1)
+
 
 def update():
     game_world.update()
