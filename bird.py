@@ -32,7 +32,7 @@ class Bird:
         # x ,y 위치, 프레임 해당 범위 내에서 랜덤하게 초기화
         self.x = random.randint(100, 1500)
         self.y = random.randint(350, 500)
-        self.face_dir = 1
+        self.face_dir = 1   # 기본 방향 오른쪽
         self.frame = random.randint(0, 14)
 
     def draw(self):
