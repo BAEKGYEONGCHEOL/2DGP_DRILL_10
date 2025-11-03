@@ -31,9 +31,9 @@ class Bird:
     def draw(self):
         frame_x, frame_y = sprites[int(self.frame)]
         if self.face_dir == 1:  # right
-            self.image.clip_composite_draw(frame_x, frame_y, 50, 46, 0, '', self.x, self.y, 50, 46)
+            self.image.clip_composite_draw(frame_x, frame_y, 50, 46, 0, '', self.x, self.y, 25, 23)
         else:  # face_dir == -1: # left
-            self.image.clip_composite_draw(frame_x, frame_y, 50, 46, 0, 'h', self.x, self.y, 50, 46)
+            self.image.clip_composite_draw(frame_x, frame_y, 50, 46, 0, 'h', self.x, self.y, 25, 23)
 
     def update(self):
         self.frame = (self.frame + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % 10
