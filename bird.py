@@ -29,6 +29,7 @@ class Bird:
     def __init__(self):
         if Bird.image == None:
             Bird.image = load_image('bird_animation.png')
+        # x ,y 위치, 프레임 해당 범위 내에서 랜덤하게 초기화
         self.x = random.randint(100, 1500)
         self.y = random.randint(350, 500)
         self.face_dir = 1
