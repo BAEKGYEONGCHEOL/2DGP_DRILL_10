@@ -9,7 +9,7 @@ sprites = (
 )
 
 # 빨간 비둘기???
-# 새의 크기: 약 21cm(공백 제외 20픽셀)
+# 새의 크기: 약 30cm(공백 제외 20픽셀)
 # 새의 속도: 시속 70km/h
 # 날개짓 속도: 초당 5회(총 14개의 이미지)
 
@@ -38,9 +38,9 @@ class Bird:
     def draw(self):
         frame_x, frame_y = sprites[int(self.frame)]
         if self.face_dir == 1:  # right
-            self.image.clip_composite_draw(frame_x, frame_y, 50, 46, 0, '', self.x, self.y, 25, 23)
+            self.image.clip_composite_draw(frame_x, frame_y, 50, 46, 0, '', self.x, self.y, 13, 12)
         else:  # face_dir == -1: # left
-            self.image.clip_composite_draw(frame_x, frame_y, 50, 46, 0, 'h', self.x, self.y, 25, 23)
+            self.image.clip_composite_draw(frame_x, frame_y, 50, 46, 0, 'h', self.x, self.y, 13, 12)
 
     def update(self):
         self.frame = (self.frame + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % 14
